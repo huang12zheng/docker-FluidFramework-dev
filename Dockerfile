@@ -5,5 +5,9 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community/" >> /etc/apk/reposi
     apk update &&\
     apk --update add git less openssh && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
+WORKDIR /root
 RUN git clone https://github.com/microsoft/FluidFramework.git
+WORKDIR /root/FluidFramework
+
 RUN npm install
+RUN rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
