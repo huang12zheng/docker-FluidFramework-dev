@@ -14,6 +14,7 @@ RUN bash -c 'source $HOME/.nvm/nvm.sh   && \
 RUN bash -c 'source $HOME/.nvm/nvm.sh   && \
     nvm use                             && \
     npm install'
+RUN git checkout -b client_v0.30.1
 RUN bash -c 'source $HOME/.nvm/nvm.sh   && \
     nvm use                             && \
-    npm run build:fast'
+    npm run build:fast -- --nolint @fluid-example/clicker'
